@@ -1,0 +1,27 @@
+## Catálogo de bibliotecas y complementos utilizados para construir y ejecutar el proyecto WMS-Backend
+
+[versions]
+
+spring-boot = "3.5.3"
+springdoc   = "2.8.5"
+jjwt        = "0.12.6"
+
+[libraries]
+
+junit         = { module = "org.junit.platform:junit-platform-launcher" }
+lombok        = { module = "org.projectlombok:lombok"                   }
+maridb-client = { module = "org.mariadb.jdbc:mariadb-java-client"       }
+
+spring-starter-test     = { module = "org.springframework.boot:spring-boot-starter-test"      }
+spring-starter-jdbc     = { module = "org.springframework.boot:spring-boot-starter-jdbc"      }
+spring-starter-jpa      = { module = "org.springframework.boot:spring-boot-starter-data-jpa"  }
+spring-starter-web      = { module = "org.springframework.boot:spring-boot-starter-web"       }
+
+springdoc-base      = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+
+[bundles]
+
+[plugins]
+
+spring-boot             = { id = "org.springframework.boot",        version.ref = "spring-boot" }
+spring-boot-management  = { id = "io.spring.dependency-management", version     = "1.1.7"       }

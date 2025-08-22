@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.5'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.api'
+version = '0.0.1-SNAPSHOT'
+description = 'Demo project for Spring Boot'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(libs.spring.starter.jdbc)
+	implementation(libs.spring.starter.web)
+	implementation(libs.spring.starter.jpa)
+
+	compileOnly(libs.lombok)
+	runtimeOnly(libs.maridb.client)
+	annotationProcessor(libs.lombok)
+
+	testImplementation(libs.spring.starter.test)
+	testRuntimeOnly(libs.junit)
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
